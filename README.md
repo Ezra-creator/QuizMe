@@ -1,56 +1,82 @@
-# Welcome to your Expo app 👋
+<div align="center">
+  
+# QuizMe 🧠
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**AI-powered trivia. Any topic. Any time.**
 
-## Get started
+[![Built with Expo](https://img.shields.io/badge/Built_with-Expo-000020?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/)
+[![Language: TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![AI: Claude API](https://img.shields.io/badge/AI-Claude_API-D97757?style=for-the-badge&logo=anthropic&logoColor=white)](https://www.anthropic.com/api)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-1. Install dependencies
+</div>
 
-   ```bash
-   npm install
-   ```
+## About
 
-2. Start the app
+QuizMe is an intelligent mobile trivia application that generates endless, highly-specific quizzes on the fly using the Anthropic Claude API. Designed for curious minds and lifelong learners, the app allows users to input any topic imaginable and instantly receive a bespoke 5-question quiz tailored to their chosen difficulty. From a technical perspective, QuizMe showcases a seamless integration of large language models within a React Native (Expo) environment, featuring strict JSON schema enforcement for reliable AI responses, a robust custom React state management system, and a highly polished, immersive dark-mode UI rich with micro-animations.
 
-   ```bash
-   npx expo start
-   ```
+## Features
 
-In the output, you'll find options to open the app in a
+- 🎯 **AI-generated questions on any topic via Claude API**
+- 🌓 **Easy / Medium / Hard difficulty modes**
+- 💡 **Interesting facts revealed after each answer**
+- 📊 **Detailed score breakdown and answer review**
+- ⚡ **Built with Expo Router for fast file-based navigation**
+- 🎨 **Fully custom dark UI with glow effects and animations**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Tech Stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+| Layer | Technology |
+|---|---|
+| **Mobile Framework** | React Native (Expo) |
+| **Language** | TypeScript |
+| **Navigation** | Expo Router |
+| **AI Backend** | Anthropic Claude API |
+| **State Management** | React Hooks (`useReducer`) |
+| **Styling** | React Native StyleSheet (Custom Theme) |
 
-## Get a fresh project
+## Project Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+QuizMe/
+├── app/                  # Expo Router screens (_layout, index, home, quiz, results)
+├── components/           # Reusable UI components (FactCard, OptionButton, ScoreCard, etc.)
+├── constants/            # Theming and static data (colors, difficulties, topics)
+├── hooks/                # Custom React hooks (useQuiz)
+├── services/             # External API integrations (aiApi)
+└── types/                # TypeScript interfaces and type definitions
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-### Other setup steps
+1. **Prerequisites**: Node.js 18+, Expo CLI, Anthropic API key
+2. **Clone the repo**: `git clone https://github.com/yourusername/quizme.git`
+3. **Install dependencies**: `npm install`
+4. **Create .env file** and add `EXPO_PUBLIC_ANTHROPIC_API_KEY=your_key_here`
+5. **Start the app**: `npx expo start`
+6. **Scan QR code** with Expo Go app on your phone
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Environment Variables
 
-## Learn more
+| Variable Name | Description | Required |
+|---|---|---|
+| `EXPO_PUBLIC_ANTHROPIC_API_KEY` | Your Anthropic Claude API key for question generation | Yes |
 
-To learn more about developing your project with Expo, look at the following resources:
+## How It Works
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. **User Input**: The user selects or types a topic and chooses a difficulty level.
+2. **AI Generation**: The app sends a highly structured prompt to the Anthropic Claude API, requesting a 5-question quiz in a strict JSON format.
+3. **Parsing**: The API returns the generated JSON, which is parsed and validated.
+4. **Interactive Quiz**: The Quiz screen renders the questions with dynamic animations, glow effects, and fact reveals, culminating in a detailed Results screen.
 
-## Join the community
+## Screenshots
 
-Join our community of developers creating universal apps.
+<!-- Add screenshots here -->
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Author
+
+Built by [Your Name] · GitHub: [@yourusername]
+
+## License
+
+This project is licensed under the MIT License.
